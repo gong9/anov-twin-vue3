@@ -10,5 +10,7 @@ export const createPerspectiveCamera = (position: Vector3) => {
   )
 
   camera.position.set(position.x, position.y, position.z)
+
+  return camera
 }
 

@@ -13,6 +13,10 @@ const router = createRouter(
         component: () => import('@/layout/index.vue'),
       },
       {
+        path: '/editor',
+        component: () => import('@/views/editor/index.vue'),
+      },
+      {
         name: '404',
         path: '/404',
         component: () => import('@/views/404/index.vue'),
