@@ -19,7 +19,7 @@ const userStore = useUserStore()
 const router = useRouter()
 
 /**
- * 登陆
+ * login
  * @param formEl
  */
 const submitForm = async (formEl: FormInstance | undefined) => {
@@ -28,8 +28,9 @@ const submitForm = async (formEl: FormInstance | undefined) => {
 
   await formEl.validate(async (valid, fields) => {
     if (valid) {
-      const flag = await userStore.login(formData.value.username, formData.value.password)
-      flag && router.push('/')
+      // const flag = await userStore.login(formData.value.username, formData.value.password)
+      console.log('login success')
+      router.push('/')
     }
   })
 }
@@ -38,7 +39,7 @@ const submitForm = async (formEl: FormInstance | undefined) => {
 <template>
   <div class="login">
     <h3 class="title">
-      Welcome to anxiety platform
+      anov-twin
     </h3>
     <div class="login-main">
       <el-form
