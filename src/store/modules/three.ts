@@ -4,12 +4,12 @@ import type { PerspectiveCamera, Scene, WebGLRenderer } from 'three'
 import type { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
 import type { TransformControls } from 'three/examples/jsm/controls/TransformControls.js'
 
-enum ControlsItemType {
+export enum ControlsItemType {
   orbitControls = 'orbitControls',
   transformControls = 'transformControls',
 }
 
-enum CameraItemType {
+export enum CameraItemType {
   perspectiveCamera = 'perspectiveCamera',
 }
 
@@ -39,7 +39,7 @@ const useThreeStore = defineStore('threeStore', () => {
     renderer.value = value
   }
 
-  const setControls = <T extends ControlsItemType> (value: ControlsValueType<T>, key: T) => {
+  const setControls = <T extends ControlsItemType> (key: T, value: ControlsValueType<T>) => {
     if ((controls.value)) {
       controls.value[key] = value as any
     }
@@ -50,7 +50,7 @@ const useThreeStore = defineStore('threeStore', () => {
     }
   }
 
-  const setCamera = <T extends CameraItemType>(value: CameraValueType<T>, key: T) => {
+  const setCamera = <T extends CameraItemType>(key: T, value: CameraValueType<T>) => {
     if ((camera.value)) {
       camera.value[key] = value as any
     }
