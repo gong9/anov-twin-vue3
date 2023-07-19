@@ -17,14 +17,16 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <div class="editor">
-    <Top />
-    <div class="flex justify-between" :style="{ height: '95vh' }">
-      <Left />
-      <Canvas />
-      <Right />
+  <Suspense>
+    <div class="editor">
+      <Top />
+      <div class="flex justify-between" :style="{ height: '95vh' }">
+        <Left />
+        <Canvas />
+        <Right />
+      </div>
     </div>
-  </div>
+  </Suspense>
 </template>
 
 <style scoped lang='scss'>
