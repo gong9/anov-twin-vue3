@@ -1,8 +1,8 @@
 <script setup lang='ts'>
 import type { Ref } from 'vue'
-import { onMounted, ref } from 'vue'
+import { onMounted, onUnmounted, ref } from 'vue'
 import { Vector3 } from 'three'
-import scene from '@/three/scene'
+import scene, { resetScene } from '@/three/scene'
 import { renderer } from '@/three/render'
 import { createPerspectiveCamera } from '@/three/camera'
 import animate from '@/three/animate'
@@ -24,6 +24,12 @@ scene.add(gridHelper)
 onMounted(() => {
   sceneDiv.value!.appendChild(renderer.domElement)
   animate(renderer, scene, camera, orbitControls)
+
+  window.addEventListener('resize', () => resetScene(camera, renderer))
+})
+
+onUnmounted(() => {
+  window.removeEventListener('resize', () => resetScene(camera, renderer))
 })
 </script>
 
