@@ -11,6 +11,7 @@ export const createOrbitControls = (camera: Camera, render: WebGLRenderer) => {
 
 export const createTransformControls = (camera: Camera, domElement: HTMLElement) => {
   const transformControls = new TransformControls(camera, domElement)
+
   return transformControls
 }
 

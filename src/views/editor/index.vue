@@ -1,9 +1,19 @@
 <script setup lang='ts'>
-import { } from 'vue'
+import { onMounted, onUnmounted } from 'vue'
+
 import Top from './top/index.vue'
 import Left from './left/index.vue'
 import Canvas from './canvas/index.vue'
 import Right from './right/index.vue'
+import controller from './controller'
+
+onMounted(() => {
+  controller.init()
+})
+
+onUnmounted(() => {
+  controller.destroy()
+})
 </script>
 
 <template>
