@@ -8,16 +8,19 @@ import { createPerspectiveCamera } from '@/three/camera'
 import animate from '@/three/animate'
 import { createOrbitControls } from '@/three/controls'
 import { createBox } from '@/three/createCube'
+import { createAxesHelper } from '@/three/helpers'
 
 const sceneDiv = ref<Ref | null>(null)
 const camera = createPerspectiveCamera(new Vector3(0, 0, 10))
 const orbitControls = createOrbitControls(camera, renderer)
+const axesHelper = createAxesHelper(10)
+
 scene.add(camera)
 scene.add(createBox())
+scene.add(axesHelper)
 
 onMounted(() => {
   sceneDiv.value!.appendChild(renderer.domElement)
-  orbitControls.update()
   animate(renderer, scene, camera, orbitControls)
 })
 </script>

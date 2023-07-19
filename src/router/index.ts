@@ -10,7 +10,7 @@ const router = createRouter(
       },
       {
         path: '/',
-        component: () => import('@/layout/index.vue'),
+        component: () => import('@/views/editor/index.vue'),
       },
       {
         path: '/editor',
@@ -25,7 +25,6 @@ const router = createRouter(
         path: '/:catchAll(.*)',
         redirect: '/404',
       },
-
     ],
   },
 )
