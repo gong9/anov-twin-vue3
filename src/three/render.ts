@@ -9,6 +9,7 @@ renderer.setSize(window.innerWidth, window.innerHeight)
 renderer.shadowMap.enabled = true
 renderer.toneMapping = ACESFilmicToneMapping
 renderer.toneMappingExposure = 0.3
+renderer.setPixelRatio(window.devicePixelRatio)
 
 export {
   renderer,
